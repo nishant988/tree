@@ -1,7 +1,20 @@
 <div class="tree-wrapper">
-    <ngx-treeview [items]="items" [config]="config" (selectedChange)="selectedValues($event)"></ngx-treeview>
+    <ngx-treeview [itemTemplate]="itemTemplate" [items]="items" [config]="config"
+        (selectedChange)="selectedValues($event)"></ngx-treeview>
     <div class="tree-values">
         <div class="selection">Your Selection</div>
-        <div *ngFor="let value of values">{{value}}</div>
+        <div *ngFor="let value of values">
+            <input type="checkbox" [checked]="true"/>
+            {{value}}
+        </div>
     </div>
 </div>
+
+<ng-template #itemTemplate let-item="item" let-onCollapseExpand="onCollapseExpand"
+    let-onCheckedChange="onCheckedChange">
+    <input type="checkbox" class="form-check-input" [(ngModel)]="item.checked" (ngModelChange)="onCheckedChange()" [disabled]="item.disabled"
+        [indeterminate]="item.indeterminate" />
+    <div class="form-inline row-item">
+        {{item.text}}
+    </div>
+</ng-template>

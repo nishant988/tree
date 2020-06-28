@@ -14,7 +14,9 @@ export class DataService {
             { text: 'LC Acceptance', value: 'LC Acceptance', children: [] },
             { text: 'LG Refinancing', value: 'LG Refinancing', children: [] },
             { text: 'LC/LG Limit', value: 'LC/LG Limit', children: [
-                {text: 'Financial LC/LG', value: 'LC/LG Limit', children: []}
+                {text: 'Financial LC/LG', value: 'Financial LC/LG', children: []},
+                {text: 'Non Financial LC/LG', value: 'Non Financial LC/LG', children: []},
+                {text: 'Trade LC/LG', value: 'Trade LC/LG', children: []}
             ]}
         ]
         console.log(items.map(data => this.convert(data)))

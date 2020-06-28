@@ -13,7 +13,7 @@ export class TreeComponent implements OnInit {
     hasAllCheckBox: false,
     hasFilter: false,
     hasCollapseExpand: false,
-    decoupleChildFromParent: true,
+    decoupleChildFromParent: false,
     maxHeight: 500
   });
   values: any[];
@@ -24,11 +24,8 @@ export class TreeComponent implements OnInit {
     this.items = this.service.getData();
   }
 
-  onFilterChange(value: string) {
-    console.log('filter:', value);
-  }
-
   selectedValues(event) {
+    console.log(event)
     this.values = event;
   }
 
