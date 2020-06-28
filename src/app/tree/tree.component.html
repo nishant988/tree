@@ -3,8 +3,8 @@
         (selectedChange)="selectedValues($event)"></ngx-treeview>
     <div class="tree-values">
         <div class="selection">Your Selection</div>
-        <div *ngFor="let value of values">
-            <input type="checkbox" [checked]="true"/>
+        <div *ngFor="let value of values; let index=index">
+            <input type="checkbox" [checked]="true" (change)="remove($event, index)"/>
             {{value}}
         </div>
     </div>

@@ -29,4 +29,10 @@ export class TreeComponent implements OnInit {
     this.values = event;
   }
 
+  remove(event, index) {
+    if (!event.currentTarget.checked) {
+      this.values.splice(index,1)
+    }
+  }
+
 }
