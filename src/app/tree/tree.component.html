@@ -1,0 +1,7 @@
+<div class="tree-wrapper">
+    <ngx-treeview [items]="items" [config]="config" (selectedChange)="selectedValues($event)"></ngx-treeview>
+    <div class="tree-values">
+        <div class="selection">Your Selection</div>
+        <div *ngFor="let value of values">{{value}}</div>
+    </div>
+</div>
